@@ -4,7 +4,10 @@
 import urllib,urllib2
 import re,random
 import sys
+
+from crawler_project.utills.monggoSql import MonggoUtils
 reload(sys)
+sys.path.append('..')
 sys.setdefaultencoding('utf-8')
 
 
@@ -47,3 +50,12 @@ class BaseObj(object):
         if com.search(content):
             resault = com.search(content).group(num)
         return resault
+
+    def saveSql(self,content):
+        if isinstance(content,dict):
+            MonggoUtils().insertOne(content)
+        elif isinstance(content,list):
+            MonggoUtils().insertMany(content)
+        elif isinstance(content,object):
+            con = content.__dict__
+            self.saveSql(con)

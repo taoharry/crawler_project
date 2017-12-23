@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column,Integer,String,Date
 
-
+#使用关系型数据库，感觉入库比较麻烦，各个网站字段可能不一致，暂时弃用
 engine = create_engine('mysql+pymysql://crawler:zufang@45.63.57.78:3306/crawler',echo=True)
 Base = declarative_base()
 

@@ -2,29 +2,36 @@
 # coding:utf-8
 
 import urllib,urllib2
-import re
-import sys
-from sqlalchemy.orm import sessionmaker
-
-
-from BaseObj import BaseObj
-from BaseDate import BaseData
-from utills.crawlerUtiles import formatUrl
-from utills.sqlutils import basicInfo
+import re,os
+import sys,time,random
 reload(sys)
 sys.setdefaultencoding('utf-8')
+pwd = os.path.dirname(os.path.abspath("__file__"))
+father = os.path.dirname(pwd)
+rootpath = os.path.dirname(father)
+sys.path.append(rootpath)
+print sys.path
+
+from crawler_project.Crawler.BaseObj import BaseObj
+from crawler_project.Crawler.BaseDate import BaseData
+from crawler_project.utills.crawlerUtiles import formatUrl
+from crawler_project.utills.logUtiles import logUtils
+#from utills.timeUtils import Sleep
+
 
 HostList = '<ul id="houseList">[\s\S]*?</ul>'
 LI = '<li class="clearfix">[\s\S]*?</li>'
+log = logUtils()
 
 class Ziru(BaseObj):
 
     def __init__(self):
         #暂且保留留作任务模块
         #pass
+        self.channel = 'ziru'
         self.dt = {}
 
-    def getPage(self,url):
+    def getPage(self,url,keyword):
         '''
         每一页内容
         http://www.ziroom.com/z/nl/z3.html?qwd=%E5%8C%97%E4%BA%AC&p=2
@@ -49,25 +56,31 @@ class Ziru(BaseObj):
             price = self.reSearch('<p class="price">([\s\S]*?)<span',li,1)
             price_way = self.reSearch('<span class="gray-6">\((.*?)\)</span>',li,1)
             data = BaseData()
+            data.keyword = keyword
+            data.channel = self.channel
             data.image = formatUrl(imageUrl)
             data.innerUrl = formatUrl(innerUrl)
             data.name = name
             data.location = location
-            data.area = area
+            data.area = filter(str.isdigit,area).strip()
             data.tier = tier
             data.usearea = usearea
-            data.traffic_distance = traffic_distance
+            data.traffic = traffic_distance
             data.icons = icons
             data.subway = subway
             data.balcony = balcony
             data.publish = publish
-            data.price = price.split()
+            data.price = filter(str.isdigit,price).strip()
             data.price_way = price_way
             import pprint,json
-            #print json.dumps(data.__dict__, ensure_ascii=False)
+            #print json.dumps(data.__dict__, ensure_ascii=False)            self.saveSql(data.__dict__)
+            # t = (name,location,area,tier,usearea,traffic_distance,icons,','.join(subway),balcony,publish,''.join(price.split()),price_way)
+            # self.dt[t] = None
+            try:
+                self.saveSql(data.__dict__)
+            except Exception as e:
+                log.error(e)
 
-            t = (name,location,area,tier,usearea,traffic_distance,icons,','.join(subway),balcony,publish,''.join(price.split()),price_way)
-            self.dt[t] = None
 
 
     #这里准备做第二张表格，里面是详细信息，声明其他类，有需求了在做。
@@ -75,19 +88,57 @@ class Ziru(BaseObj):
         html = self.getPageContent(self.url)
         pass
 
+    def getAllUrl(self,content):
+        resualt = {}
+        #区域获取
+        # ul = self.reSearch('<dl class="clearfix zIndex6">[\s\S]*?</dl>',content,0)
+        # dlis = re.findall('<a.*?href="([\s\S]*?)".*?>([\s\S]*?)</a>',ul)
+        # for li in dlis:
+        #     resualt[formatUrl(li[0])] = li[1]
+        ul_s = self.reSearch('<dl class="clearfix zIndex5">[\s\S]*?</dl>',content,0)
+        subwaylis = re.findall('<a.*?href="([\s\S]*?)".*?>([\s\S]*?)</a>',ul_s)
+        for li in subwaylis:
+            resualt[formatUrl(li[0])] = li[1]
+        return resualt
 
+    def getPageNum(self,content):
+        '''
+        爬虫陷阱，无论拼接数值多大都会返回最后一页
+        :param content:
+        :return: pagenum
+        '''
+        nu = re.compile("<span>共(\d+?)页</span>")
+        if nu:
+            num = nu.search(content).group(1)
+            if num.isdigit():
+                return int(num)
+        else:
+            return 20
 
-    def main(self,url,keyword,num=99):
+    def main(self,url,keyword,num=20):
         if not isinstance(num,int):
             num = 20
         if url == '':
-            for i in range(num):
-                url = 'http://www.ziroom.com/z/nl/z3.html?qwd={keyword}&p={page}'.format(keyword=keyword,page=i)
-                self.getPage(url)
+            url = 'http://www.ziroom.com/z/nl/z3.html?qwd={keyword}'.format(keyword=keyword)
+            content = self.getPageContent(url)
+            num = self.getPageNum(content)
+            urlList = self.getAllUrl(content)
+            for url in urlList:
+                keyword = urlList[url]
+                if keyword == '全部':
+                    continue
+                print '------'
+                print '%s start'%keyword
+                time.sleep(random.random())
+                for i in range(num):
+                    url = url + "?p={page}".format(page=i)
+                    self.getPage(url,keyword)
         else:
-            self.getPage(url)
-        from  utills.exalutils import writeXl
-        writeXl('ziru.xls',self.dt )
+            self.getPage(url,keyword)
+        # from crawler_project.utills.exalutils import writeXl
+        # writeXl('ziru.xls',self.dt )
+
+
 if __name__ == "__main__":
     url = 'http://www.ziroom.com/z/nl/z3.html?qwd=%E5%8C%97%E4%BA%AC&p=2'
     Ziru().main(url='',keyword='北京')

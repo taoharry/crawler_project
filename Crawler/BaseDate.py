@@ -1,17 +1,22 @@
 #!usr/bin/env python
 # coding:utf-8
+import sys
 
-from utills.timeUtils import formatToday
+from crawler_project.utills.timeUtils import formatToday,exposeTimeNow
 
 class BaseData(object):
     '''
     需要增加类型检验，还未做
     '''
-    def __init__(self,image='',name='',location='',innerUrl='',
+    def __init__(self,keyword='',channel='',taskType='daliay',image='',name='',location='',innerUrl='',
                  area='',usearea='',traffic_distance='',
                  tier='',icons='',subway=[],balcony='',
-                 price=0,publish='',price_way='',timeIn=formatToday):
+                 price=0,publish='',price_way='',timeIn=formatToday,timeNow=exposeTimeNow):
+        self.keyword = keyword
+        self.channel = channel
+        self.taskType = taskType
         self.timeIn = timeIn
+        self.timeNow = timeNow #字符时间
         self.image = image #照片
         self.name = name
         self.location = location
