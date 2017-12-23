@@ -6,14 +6,15 @@ import re,os
 import sys,time,random
 reload(sys)
 sys.setdefaultencoding('utf-8')
-pwd = os.path.dirname(os.path.abspath("__file__"))
-father = os.path.dirname(pwd)
-rootpath = os.path.dirname(father)
-sys.path.append(rootpath)
-print sys.path
+sys.path.append("/home/harry/ENV")
+execPath = os.path.dirname(os.path.abspath("__file__"))
+appPath = os.path.dirname(execPath)
+envPath = os.path.dirname(appPath)
+sys.path.append(envPath)
 
-from crawler_project.Crawler.BaseObj import BaseObj
-from crawler_project.Crawler.BaseDate import BaseData
+
+from crawler_project.CrawLer.BaseObj import BaseObj
+from crawler_project.CrawLer.BaseDate import BaseData
 from crawler_project.utills.crawlerUtiles import formatUrl
 from crawler_project.utills.logUtiles import logUtils
 #from utills.timeUtils import Sleep

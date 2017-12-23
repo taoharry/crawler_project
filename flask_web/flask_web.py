@@ -7,7 +7,11 @@ sys.setdefaultencoding("utf8")
 
 import os
 from flask import Flask, jsonify
-
+sys.path.append("/home/harry/ENV/")
+execPath = os.path.dirname(os.path.abspath("__file__"))
+appPath = os.path.dirname(execPath)
+envPath = os.path.dirname(appPath)
+sys.path.append(envPath)
 
 from crawler_project.utills.monggoSql import MonggoUtils
 from crawler_project.utills.logUtiles import logUtils
@@ -18,25 +22,28 @@ log = logUtils()
 
 
 
-@app.route('/<channel>/<location>/<sort>/<int:sortid>/<int:id>', methods=['GET'])
-def hello_world(channel, location, sort,sortid,  id):
+@app.route('/<channel>/<location>/<sort>/<int:sortid>/<int:ids>', methods=['GET'])
+def hello_world(channel, location, sort,sortid,  ids):
     #return 'Hello World!'
     newResault = []
-    id = int(id)
+    ids = int(ids)
     sortid = int(sortid)
-    lt = formatFind(channel,location)
+    lt = formatFind(location)
+    log.info([channel,location,sort,sortid,ids])
     for cha in lt:
+	#import pdb
+	#pdb.set_trace()
         resalut = MonggoUtils().getDataToday(channel, cha, sortid, sort)
         for i in resalut:
             del i['_id']
             newResault.append(i)
     log.info('start flask_web')
-    if id == 0:
-        id =1
-    elif id+10 > len(newResault):
+    if ids == 0:
+        ids =1
+    elif ids+10 > len(newResault):
         return jsonify(newResault[-10:])
 
-    return jsonify(newResault[id:id+10])
+    return jsonify(newResault[ids:ids+10])
 
 def formatFind(location):
     lt = []
@@ -44,7 +51,7 @@ def formatFind(location):
     monggofind = {"timeIn":formatToday}
     if location != 'NoneFind':
         for l in location:
-            monggofind["location"] = {"$regex":location}
+            monggofind["location"] = {"$regex":l}
             lt.append(monggofind)
     else:
         lt.append(monggofind)

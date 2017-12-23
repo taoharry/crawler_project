@@ -11,3 +11,32 @@ Sat, 23 Dec 2017 16:22:19 _internal.py[line:87] INFO 127.0.0.1 - - [23/Dec/2017 
 Sat, 23 Dec 2017 16:22:27 _internal.py[line:87] INFO 127.0.0.1 - - [23/Dec/2017 16:22:27] "GET /ziru HTTP/1.1" 404 -
 Sat, 23 Dec 2017 16:22:32 logUtiles.py[line:27] INFO start flask
 Sat, 23 Dec 2017 16:28:02 _internal.py[line:87] INFO 127.0.0.1 - - [23/Dec/2017 16:28:02] "GET /ziru/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 02:25:37 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:28:58 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:28:58] "GET /ziru/5/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:31:37 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:31:40 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:31:40] "GET /ziru/5/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:32:50 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:32:52 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:32:52] "GET /ziru/5/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:33:08 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:33:08] "GET /ziru/昌平/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:42:57 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:43:00 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:43:00] "GET /ziru/昌平/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:44:14 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:44:17 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:44:17] "GET /ziru/昌平/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:45:50 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:45:53 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:45:53] "GET /ziru/昌平/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:47:38 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:47:52 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
+Sun, 24 Dec 2017 02:47:52 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 02:47:52] "GET /ziru/昌平/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 02:54:51 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:55:43 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 02:55:59 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
+Sun, 24 Dec 2017 03:00:10 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 03:00:10] "GET /ziru/昌平/price/1/1 HTTP/1.1" 500 -
+Sun, 24 Dec 2017 03:00:15 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 03:00:19 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
+Sun, 24 Dec 2017 03:01:12 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 03:01:12 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 03:01:12] "GET /ziru/昌平/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 03:25:59 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 03:40:33 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 03:40:47 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
+Sun, 24 Dec 2017 03:41:02 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 03:41:02 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 03:41:02] "GET /ziru/昌平/price/1/1 HTTP/1.1" 200 -
