@@ -40,3 +40,45 @@ Sun, 24 Dec 2017 03:40:33 _internal.py[line:87] INFO  * Running on http://127.0.
 Sun, 24 Dec 2017 03:40:47 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
 Sun, 24 Dec 2017 03:41:02 logUtiles.py[line:27] INFO start flask_web
 Sun, 24 Dec 2017 03:41:02 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 03:41:02] "GET /ziru/昌平/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 03:54:40 _internal.py[line:87] INFO  * Running on http://127.0.0.1:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 03:57:54 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
+Sun, 24 Dec 2017 03:57:54 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 03:57:54 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 03:57:54] "GET /ziru/昌平/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 10:23:40 _internal.py[line:87] INFO  * Running on https://0.0.0.0:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 10:37:22 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 10:37:22 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 10:37:22 _internal.py[line:87] INFO 127.0.0.1 - - [24/Dec/2017 10:37:22] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 10:44:58 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 10:44:59 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 10:44:59 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:44:59] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 10:44:59 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:44:59] "GET /favicon.ico HTTP/1.1" 404 -
+Sun, 24 Dec 2017 10:44:59 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:44:59] "GET /favicon.ico HTTP/1.1" 404 -
+Sun, 24 Dec 2017 10:45:28 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 10:45:28 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 10:45:29 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:45:29] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 10:45:29 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:45:29] "GET /favicon.ico HTTP/1.1" 404 -
+Sun, 24 Dec 2017 10:45:29 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:45:29] "GET /favicon.ico HTTP/1.1" 404 -
+Sun, 24 Dec 2017 10:48:46 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 10:48:47 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 10:48:47 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:48:47] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 10:48:51 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 2]
+Sun, 24 Dec 2017 10:48:51 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 10:48:51 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:48:51] "GET /ziru/5/price/1/2 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 10:48:56 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 3]
+Sun, 24 Dec 2017 10:48:56 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 10:48:56 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 10:48:56] "GET /ziru/5/price/1/3 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 11:06:00 _internal.py[line:87] INFO  * Running on https://0.0.0.0:2018/ (Press CTRL+C to quit)
+Sun, 24 Dec 2017 11:06:38 logUtiles.py[line:27] INFO [u'ziru', u'\u660c\u5e73', u'price', 1, 1]
+Sun, 24 Dec 2017 11:06:38 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 11:06:38 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 11:06:38] "GET /ziru/%E6%98%8C%E5%B9%B3/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 11:06:38 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 11:06:38] "GET /favicon.ico HTTP/1.1" 404 -
+Sun, 24 Dec 2017 11:06:38 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 11:06:38] "GET /favicon.ico HTTP/1.1" 404 -
+Sun, 24 Dec 2017 11:08:38 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 11:08:38 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 11:08:38 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 11:08:38] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 11:17:58 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 11:17:58 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 11:17:58 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 11:17:58] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
+Sun, 24 Dec 2017 11:17:58 logUtiles.py[line:27] INFO [u'ziru', u'5', u'price', 1, 1]
+Sun, 24 Dec 2017 11:17:58 logUtiles.py[line:27] INFO start flask_web
+Sun, 24 Dec 2017 11:17:58 _internal.py[line:87] INFO 101.38.32.130 - - [24/Dec/2017 11:17:58] "GET /ziru/5/price/1/1 HTTP/1.1" 200 -
