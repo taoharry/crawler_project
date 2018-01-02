@@ -5,10 +5,11 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf8")
 
+
 import os
 from flask import Flask, jsonify
 #sys.path.append("/home/harry/ENV/")
-execPath = os.path.dirname(os.path.abspath("__file__"))
+execPath = os.path.dirname(os.path.realpath(__file__))
 appPath = os.path.dirname(execPath)
 envPath = os.path.dirname(appPath)
 sys.path.append(appPath)

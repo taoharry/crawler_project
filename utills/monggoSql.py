@@ -8,8 +8,8 @@ __Version__ = 1
 import sys
 from pymongo import MongoClient
 
-from crawler_project.config.config import monggoHost,monggoPort,monggoUser,monggoPwd,monggoDb
-from crawler_project.utills.timeUtils import formatToday
+from config.config import monggoHost,monggoPort,monggoUser,monggoPwd,monggoDb
+from utills.timeUtils import formatToday
 
 
 class MonggoUtils(object):
