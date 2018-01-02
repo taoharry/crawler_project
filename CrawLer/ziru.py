@@ -9,14 +9,13 @@ sys.setdefaultencoding('utf-8')
 sys.path.append("/home/harry/ENV")
 execPath = os.path.dirname(os.path.abspath("__file__"))
 appPath = os.path.dirname(execPath)
-envPath = os.path.dirname(appPath)
-sys.path.append(envPath)
+sys.path.append(appPath)
 
 
-from crawler_project.CrawLer.BaseObj import BaseObj
-from crawler_project.CrawLer.BaseDate import BaseData
-from crawler_project.utills.crawlerUtiles import formatUrl
-from crawler_project.utills.logUtiles import logUtils
+from CrawLer.BaseObj import BaseObj
+from CrawLer.BaseDate import BaseData
+from utills.crawlerUtiles import formatUrl
+from utills.logUtiles import logUtils
 #from utills.timeUtils import Sleep
 
 

@@ -7,15 +7,15 @@ sys.setdefaultencoding("utf8")
 
 import os
 from flask import Flask, jsonify
-sys.path.append("/home/harry/ENV/")
+#sys.path.append("/home/harry/ENV/")
 execPath = os.path.dirname(os.path.abspath("__file__"))
 appPath = os.path.dirname(execPath)
 envPath = os.path.dirname(appPath)
-sys.path.append(envPath)
+sys.path.append(appPath)
 
-from crawler_project.utills.monggoSql import MonggoUtils
-from crawler_project.utills.logUtiles import logUtils
-from crawler_project.utills.timeUtils import formatToday
+from utills.monggoSql import MonggoUtils
+from utills.logUtiles import logUtils
+from utills.timeUtils import formatToday
 
 app = Flask(__name__)
 log = logUtils()
