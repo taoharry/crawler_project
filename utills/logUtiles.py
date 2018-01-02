@@ -9,7 +9,7 @@ import os
 import logging
 import logging.config
 
-from crawler_project.config.config import confPath
+from config.config import confPath
 confPath = "/home/harry/ENV/crawler_project/config"
 
 class logUtils(object):
