@@ -2,7 +2,7 @@
 # coding:utf-8
 import sys
 
-from crawler_project.utills.timeUtils import formatToday,exposeTimeNow
+from utills.timeUtils import formatToday,exposeTimeNow
 
 class BaseData(object):
     '''

@@ -1,7 +1,7 @@
 #!usr/bin/env python
 # coding:utf-8
 
-import threading,thread
+import Queue,traceback
 
 
 from CrawLer.ziru import Ziru

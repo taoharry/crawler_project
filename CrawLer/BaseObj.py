@@ -5,7 +5,7 @@ import urllib,urllib2
 import re,random
 import sys
 
-from crawler_project.utills.monggoSql import MonggoUtils
+from utills.monggoSql import MonggoUtils
 reload(sys)
 sys.path.append('..')
 sys.setdefaultencoding('utf-8')
