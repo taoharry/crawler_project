@@ -6,7 +6,6 @@ import re,os
 import sys,time,random
 reload(sys)
 sys.setdefaultencoding('utf-8')
-sys.path.append("/home/harry/ENV")
 execPath = os.path.dirname(os.path.realpath(__file__))
 appPath = os.path.dirname(execPath)
 sys.path.append(appPath)
