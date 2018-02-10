@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Task</title>
+    <link rel="stylesheet" type="text/css" href="cssFile.css">
+</head>
+<body background="../static/back.jpg" background-size="cover">
+    <div class="getTask">
+        <form action="{{ url_for('/sedTask')}}" method="post">
+            <input type="text" name="getTask" content="", >
+            <input type="submit" value="getTask" onclick="alert('')">
+        </form>
+    </div>
+    <div class="addTask">
+        <div class="col1">
+            <input type="text">
+        </div>
+
+    </div>
+
+</body>
+</html>

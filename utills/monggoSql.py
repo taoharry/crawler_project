@@ -3,7 +3,7 @@
 
 __Auther__ = "harry"
 __Createtime__ = "2017/11/18 18:07"
-__Version__ = 1
+__Version__ = 2
 
 import sys
 from pymongo import MongoClient
@@ -14,11 +14,13 @@ from utills.timeUtils import formatToday
 
 class MonggoUtils(object):
 
-    def __init__(self):
-        self.client = MongoClient(monggoHost,monggoPort)
+    def __init__(self, host = monggoHost, port =monggoPort, user = monggoUser,
+                 pwd = monggoPwd, db = monggoDb):
+        #默认是存储数据库
+        self.client = MongoClient(host,port)
         self.db = self.client.admin
-        self.db.authenticate(monggoUser,monggoPwd)
-        self.Usedb = self.client[monggoDb]
+        self.db.authenticate(user,pwd)
+        self.Usedb = self.client[db]
 
 
     def insertOne(self,Dict):

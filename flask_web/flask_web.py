@@ -22,7 +22,7 @@ app = Flask(__name__)
 log = logUtils()
 
 
-
+#输出接口
 @app.route('/<channel>/<location>/<sort>/<int:sortid>/<int:ids>', methods=['GET'])
 def hello_world(channel, location, sort,sortid,  ids):
     #return 'Hello World!'
@@ -32,8 +32,8 @@ def hello_world(channel, location, sort,sortid,  ids):
     lt = formatFind(location)
     log.info([channel,location,sort,sortid,ids])
     for cha in lt:
-	#import pdb
-	#pdb.set_trace()
+        #import pdb
+        #pdb.set_trace()
         resalut = MonggoUtils().getDataToday(channel, cha, sortid, sort)
         for i in resalut:
             del i['_id']
