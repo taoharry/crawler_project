@@ -6,3 +6,4 @@ class MainMaker(object):
     """
 
     """
+    pass

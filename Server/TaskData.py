@@ -9,22 +9,23 @@ import traceback
 
 from utills.check_fields import checkFileds
 
-
-
 class TaskData(checkFileds):
 
-    def __init__(self,version='',taskType="",jobId="",channel="",
-                 priority=0,duration=0,data={}):
-        if jobId == '':
-            self.jobIdId = hashlib.md5(time.time())
-        self.jobIdId  = jobId
-        self.version = version
+    def __init__(self,taskId = '', duration = 20, channel = '',interval = 1800,
+                 path = '',descript = '', priority = 0,data = [],taskType='',
+                 clientType = '', version = ''):
         self.taskType = taskType
+        self.taskId = taskId
+        self.chanenl = channel
+        self.descript = descript
+        self.interval = interval   #下次执行间隔
+        self.duration = duration   #执行时长,超过这个时间杀死任务
         self.priority = priority
-        self.duration = duration
+        self.clientType = clientType  #容器数量
+        self.version = version
         self.data = data
-        self.channel = channel
-
+        self.path = path
+        self.createTime = int(time.time())
 
 class Newclass(object):
     def __init__(self):

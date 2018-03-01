@@ -137,6 +137,8 @@ class Ziru(BaseObj):
         # from crawler_project.utills.exalutils import writeXl
         # writeXl('ziru.xls',self.dt )
 
+    def Start(self,task):
+        self.main(task.url)
 
 if __name__ == "__main__":
     url = 'http://www.ziroom.com/z/nl/z3.html?qwd=%E5%8C%97%E4%BA%AC&p=2'

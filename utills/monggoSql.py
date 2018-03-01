@@ -78,6 +78,6 @@ class MonggoUtils(object):
 
 if __name__ == "__main__":
     collection = 'ziru'
-    cha = {"timeIn":formatToday,"location":{"$regex":"双井"}}
+    cha = {"timeIn":formatToday,"location":{"taskType":"哇哈哈"}}
     print cha
     MonggoUtils().getDataToday(collection,cha)
